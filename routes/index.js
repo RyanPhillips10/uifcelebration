@@ -4,7 +4,8 @@ var router = express.Router();
 /* GET home page. */
 
 router.get('/', function(req, res) {
-  res.render('index', { title: 'Express' });
+	console.log("load main page");
+  res.render('index', { title: 'UI5' });
 });
 
 module.exports = router;

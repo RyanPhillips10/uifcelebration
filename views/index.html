@@ -1,0 +1,46 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<title>Full Motion</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<link rel="stylesheet" href="css/main.css" />
+	</head>
+	
+	
+	<body id="top">
+
+			<!-- Top Banner -->
+			<!--
+				To use a video as your background, set data-video to the name of your video without
+				its extension (eg. images/banner). Your video must be available in both .mp4 and .webm
+				formats to work correctly.
+
+				data-video="public/images/banner"
+			-->
+				<section id="banner" >
+					<div class="inner">
+						<header>
+							<h1>UI5</h1>
+							<p>November 19, 2017</br> Until then, check back here for more details</p>
+							<p> </p>
+						</header>
+					</div>
+				</section>
+
+		<!-- Scripts -->
+			<script src="js/jquery.min.js"></script>
+			<script src="js/jquery.scrolly.min.js"></script>
+			<script src="js/jquery.poptrox.min.js"></script>
+			<script src="js/skel.min.js"></script>
+			<script src="js/util.js"></script>
+			<script src="js/main.js"></script>
+
+			<script type="text/javascript">
+				console.log ("testing this");
+				var images = ['background.jpg', 'background1.jpg', 'background2.jpg', 'background3.jpg'];
+				$('#banner').css({'background-image': 'url(img/' + images[Math.floor(Math.random() * images.length)] + ')'});
+			</script>
+
+	</body>
+</html>

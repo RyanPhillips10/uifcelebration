@@ -7,8 +7,8 @@ var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 
+// Only have one page, may add more later
 var routes = require('./routes/index');
-var users = require('./routes/user');
 
 var app = express();
 
@@ -30,8 +30,8 @@ app.use(bodyParser.urlencoded({
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
+// For now, just need a single route, perhaps more hidden ones in the future ;)
 app.use('/', routes);
-app.use('/users', users);
 
 /// catch 404 and forward to error handler
 app.use(function(req, res, next) {
