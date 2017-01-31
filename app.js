@@ -1,20 +1,28 @@
+// Make sure we get telemetry for error reporting
+var appInsights = require("applicationinsights");
+appInsights.setup().start();
+var client = appInsights.getClient();
 
+var startTime = Date.now();
 
+// Load dependencies
 var express = require('express');
 var path = require('path');
 var favicon = require('serve-favicon');
 var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
+var endTime = Date.now();
+
+var elapsedTime = endTime - startTime;
+var success = true;
+client.trackDependency("Load Dependencies", "TEST", elapsedTime, success);
+
 
 // Only have one page, may add more later
 var routes = require('./routes/index');
 
-// Make sure we get telemetry for error reporting
-var appInsights = require("applicationinsights");
-appInsights.setup().start();
-var client = appInsights.getClient();
-
+// Create the express app
 var app = express();
 
 var env = process.env.NODE_ENV || 'development';
