@@ -10,6 +10,11 @@ var bodyParser = require('body-parser');
 // Only have one page, may add more later
 var routes = require('./routes/index');
 
+// Make sure we get telemetry for error reporting
+var appInsights = require("applicationinsights");
+appInsights.setup().start();
+var client = appInsights.getClient();
+
 var app = express();
 
 var env = process.env.NODE_ENV || 'development';
